@@ -1,0 +1,42 @@
+_repo: Records-of-Journeys-to-Venice-and-the-Low-Countries_3226
+contributor:
+  translator:
+    agent_name: Tombo, Rudolf
+    alias: Tombo, Rudolph
+    birthdate: 1875
+    deathdate: 1914
+    gutenberg_agent_id: '1136'
+    url: http://www.gutenberg.org/2009/agents/1136
+creator:
+  author:
+    agent_name: Dürer, Albrecht
+    aliases:
+    - Durer, Albrecht
+    - Duerer, Albrecht
+    birthdate: 1471
+    deathdate: 1528
+    gutenberg_agent_id: '1135'
+    url: http://www.gutenberg.org/2009/agents/1135
+    wikipedia: http://en.wikipedia.org/wiki/Albrecht_Dürer
+description: ''
+gutenberg_bookshelf: Art
+gutenberg_issued: '2002-05-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '3226'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Netherlands -- Description and travel'
+- !lcsh 'Dürer, Albrecht, 1471-1528 -- Correspondence'
+- !lcsh 'Dürer, Albrecht, 1471-1528 -- Diaries'
+- !lcsh 'Artists -- Germany -- Correspondence'
+- !lcsh 'Dürer, Albrecht, 1471-1528 -- Travel'
+- !lcsh 'Venice (Italy) -- Description and travel'
+- !lcsh 'Artists -- Germany -- Diaries'
+- !lcsh 'Pirckheimer, Willibald, 1470-1530 -- Correspondence'
+- !lcc 'ND'
+title: Records of Journeys to Venice and the Low Countries
+url: http://www.gutenberg.org/ebooks/3226
