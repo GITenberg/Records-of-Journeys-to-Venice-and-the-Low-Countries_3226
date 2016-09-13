@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: enOzfU5TQ4uPMJ6rFyQZR947/v/bvxqZYrwC1Ls3jF0uslZJhfKHyz8ISIVZSO++mLwFLmvyNv5XjcQDsLF5t77bFrdV98mog0SpIU1bAPa7hDVVtgSba0PzYyDf5jEzr5TXzbn1nw3A0g4jxEdOihdX9lXatQ8AVjd/uBS6jmKqgwtiQvI/25zA3DXEPwnP28DAvj0IceGsRiR8546GW+UPIzMrxb2H67d3SaVsWDQ7gINDwrheXAuHfWqWMNhcYKUg85xgV7B9TdQAvbAzdYwin83pVDSqt2NqSr6EBM9s8nZN+N1oYQgTobpc6ypof4/+kNPNJvUkH6UiZgUQhacNeka6ePYWcSunjwBOhYIrCz9xQiqFirOlg6RxLBFFirJpNRl10K4KgXXcKaMwyeWOwaBzr+M1jc58C1jGuiPIKw+rzvmvxzVBbnyvxjwuB36dGYnv2+lnoKlcxcJeaplhZAF5ZA2LSwWWwbZ2Wxc+nzlMFtH4dfpkCfVPS9989UKwJFlskcGeKerPqoyal2LErc2yI/Oom2C0RU/Y8FU9EK2hKuc7Q0TP4Q4rtw/cZ0XWlyHKGA3zbJUfNzbczbltQ9BOIn0nKODyHNww9YgNEGefkPGT/kd7CVFekki5i+zl/KDdPX1S4L62z6+tLn4ekNnRfrsKcFr2AFbfphk=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Records-of-Journeys-to-Venice-and-the-Low-Countries_3226
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
