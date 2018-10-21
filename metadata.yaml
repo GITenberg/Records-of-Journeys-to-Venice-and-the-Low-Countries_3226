@@ -1,5 +1,5 @@
 _repo: Records-of-Journeys-to-Venice-and-the-Low-Countries_3226
-_version: 0.2.0
+_version: 0.2.1
 contributor:
   translator:
     agent_name: Tombo, Rudolf
@@ -44,5 +44,6 @@ subjects:
 - !lcsh 'Artists -- Germany -- Diaries'
 - !lcsh 'Pirckheimer, Willibald, 1470-1530 -- Correspondence'
 - !lcc 'ND'
+- GITenberg
 title: Records of Journeys to Venice and the Low Countries
 url: http://www.gutenberg.org/ebooks/3226
